@@ -5,7 +5,7 @@ using UnityEngine;
 public class BaseEnemyStats : MonoBehaviour
 {
     [SerializeField] private float health = 100f; // Enemies starting Health stats.
-    [SerializeField] private float movementSpeed = 5f; // How fast the enemies move.
+    [SerializeField] private float movementSpeed = 2.5f; // How fast the enemies move.
 
     public Transform player; // Getting a reference to the players position.
 
@@ -21,6 +21,7 @@ public class BaseEnemyStats : MonoBehaviour
     {
         if(player != null)
         {
+
             // This calculates what direction the player is to the enemy.
             Vector3 direction = (player.position - transform.position).normalized;
 
