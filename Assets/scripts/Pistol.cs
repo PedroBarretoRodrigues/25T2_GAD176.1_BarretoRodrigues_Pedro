@@ -14,11 +14,8 @@ public class Pistol : BaseWeapon
 
     public override void Fire()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse0))
-        {
             base.Fire();
-        }
-        
+
     }
 
 }
