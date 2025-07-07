@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BaseWeapon : MonoBehaviour
 {
-    [SerializeField] private string weaponName;
-    [SerializeField] private int weaponDamage;
-    [SerializeField] private float fireRate;
+    [SerializeField] protected string weaponName;
+    [SerializeField] protected int weaponDamage;
+    [SerializeField] protected float fireRate;
     public GameObject projectilePrefab;
     public Transform firePoint;
 
@@ -17,7 +17,9 @@ public class BaseWeapon : MonoBehaviour
         if(Time.time >= nextFireTime)
         {
             nextFireTime = Time.time + fireRate;
-            Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+            GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+
+            
             Debug.Log(weaponName + " attacked with " + weaponDamage + " damage.");
             Debug.Log($"{weaponName} fired!");
         }
